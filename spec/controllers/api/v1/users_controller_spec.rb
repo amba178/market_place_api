@@ -17,6 +17,24 @@ describe Api::V1::UsersController do
    		 it { should respond_with 200 }
   	end	
 
+  	describe "PUT/PATCH #update" do
+
+       context "when is successfully updated" do
+            before(:each) do
+                @user = FactoryGirl.create :user
+                patch :update, { id: @user.id,
+                         user: { email: "newmail@example.com" } }, format: :json
+            end
+
+             it "renders the json representation for the updated user" do
+               user_response = JSON.parse(response.body, symbolize_names: true)
+               expect(user_response[:email]).to eql "newmail@example.com"
+             end
+
+             it { should respond_with 200 }
+        end
+    end 
+
   	describe "POST #create" do 
   		before(:each) do 
   			@user_attributes = FactoryGirl.attributes_for :user 
