@@ -10,4 +10,9 @@ module Authenticable
   	         status: :unauthorized unless current_user.present?
   end
 
+  #devise method
+  def user_signed_in?
+  	current_user.present?
+  end
+
 end

@@ -26,6 +26,7 @@ describe Api::V1::SessionsController do
     context "when the credentials are incorrect" do
 
       before(:each) do
+      	@user = FactoryGirl.create :user
         credentials = { email: @user.email, password: "invalidpassword" }
         post :create, { session: credentials }
       end
@@ -33,7 +34,7 @@ describe Api::V1::SessionsController do
       it "returns a json with an error" do
         expect(json_response[:errors]).to eql "Invalid email or password"
       end
-
+      # byebug
       it { should respond_with 422 }
     end
   end
@@ -42,7 +43,7 @@ describe Api::V1::SessionsController do
 
     before(:each) do
       @user = FactoryGirl.create :user
-      sign_in @user, store: false
+      sign_in @user 
       delete :destroy, id: @user.auth_token
     end
 
