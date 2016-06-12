@@ -9,8 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #Api gems
-gem "active_model_serializers", github: "rails-api/active_model_serializers"
-
+gem 'active_model_serializers', git: 'git@github.com:rails-api/active_model_serializers.git', branch: '0-8-stable'
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
 # gem 'compass-rails'
 # gem 'sass-rails', '~> 5.0'
