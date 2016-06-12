@@ -60,6 +60,7 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
+  config.include Request::JsonHelpers, :type => :controller 
 
   config.include Devise::TestHelpers, type: :controller
 
