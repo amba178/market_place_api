@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+ before { @user = FactoryGirl.build(:user) }
+
+ subject { @user }
+
+ it { respond_to(:email, :password, :password_confirmation) }
+ it { be_valid }
+
 end
