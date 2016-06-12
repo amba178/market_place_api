@@ -10,6 +10,7 @@ describe Api::V1::ProductsController do
 
    		 it "returns the information about a reporter on a hash" do
       		product_response = json_response
+
       		expect(product_response[:title]).to eql @product.title
     	end
 

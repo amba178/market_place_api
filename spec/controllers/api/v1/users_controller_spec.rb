@@ -14,6 +14,7 @@ describe Api::V1::UsersController do
 
     	it "returns the information about a reporter on a hash" do
      		 user_response = json_response
+         byebug
      		 expect(user_response[:email]).to eql @user.email
    		 end
 
