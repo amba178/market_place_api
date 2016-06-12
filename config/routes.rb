@@ -2,6 +2,7 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
   
+  mount SabisuRails::Engine => "/sabisu_rails"
   devise_for :users
   # Api definition example: http://api.market_palce_api.dev/users/1 using pow
   namespace :api, defaults: { format: :json }, constraints: {subdomain: 'api'}, path: '/' do 

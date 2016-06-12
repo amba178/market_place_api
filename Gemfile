@@ -11,6 +11,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Api gems
 gem 'active_model_serializers'
 
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+# gem 'compass-rails'
+# gem 'sass-rails', '~> 5.0'
+gem 'compass-rails', '~> 2.0.4'
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'puma'
+
 
 
 group :development, :test do
