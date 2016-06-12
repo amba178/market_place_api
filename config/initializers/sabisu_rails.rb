@@ -36,7 +36,7 @@ SabisuRails.setup do |config|
   # @@authentication_password = "sekret"
 
   # Resources on the api
-   config.resources = [:users]
+   config.resources = [:users, :products]
 
   # Default resource
    config.default_resource = :users
