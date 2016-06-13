@@ -105,4 +105,7 @@ describe Product do
     end
   end
 
+  it { should have_many(:placements) }
+  it { should have_many(:orders).through(:placements) }
+
 end
