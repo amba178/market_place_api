@@ -33,6 +33,7 @@ group :test do
   gem "rspec-rails", "~> 2.14"
   gem "shoulda-matchers"
   gem 'database_cleaner'
+  gem 'email_spec'
 end
 
 group :development do
