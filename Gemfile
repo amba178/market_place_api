@@ -18,6 +18,7 @@ gem 'furatto'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'puma'
+gem 'kaminari'
 # gem 'active_model_serializers', '~> 0.10.0'
 
 
