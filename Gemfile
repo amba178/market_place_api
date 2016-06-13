@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'puma'
 gem 'kaminari'
 # gem 'active_model_serializers', '~> 0.10.0'
+gem 'delayed_job_active_record'
 
 
 

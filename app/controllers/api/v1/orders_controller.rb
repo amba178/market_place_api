@@ -3,7 +3,12 @@ class Api::V1::OrdersController < ApplicationController
     respond_to :json
 
     def index
-       respond_with current_user.orders
+        orders = current_user.orders.page(params[:page]).per(params[:per_page])
+    	# orders = current_user.orders.page(params[:page]).per(params[:per_page])
+    	render json: orders, meta: { pagination:
+                                   { per_page: params[:per_page],
+                                     total_pages: orders.total_pages,
+                                     total_objects: orders.total_count } }
     end
 
     def show
@@ -15,7 +20,7 @@ class Api::V1::OrdersController < ApplicationController
     	order.build_placements_with_product_ids_and_quantities(params[:order][:product_ids_and_quantities])
     	if order.save
     		order.reload #we reload the object so the response displays the product objects
-    		OrderMailer.send_confirmation(order).deliver
+    		OrderMailer.delay.send_confirmation(order) #delay job
     		render json: order, status: 201, location: [:api, current_user, order]
     	else
     		render json: { errors: order.errors }, status: 422 
